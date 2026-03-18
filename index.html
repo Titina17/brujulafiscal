@@ -777,6 +777,10 @@ function openModal() {
   document.body.style.overflow = 'hidden';
 }
 function closeModal() {
+  const iframe = document.getElementById('drive-video');
+  const src = iframe.src;
+  iframe.src = '';
+  setTimeout(() => { iframe.src = src; }, 100);
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow = '';
 }
